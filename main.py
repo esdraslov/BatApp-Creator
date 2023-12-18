@@ -1,9 +1,26 @@
-import PyAutoGui as pg
+import PySimpleGUI as sg
 import os
 import components.appDetector
 
-layout = [[pg.Text("Projects")],
-    [pg.Button("open", key="-OP-"), pg.Button("new", key="-NEW-"), pg.Button("manage")]
+layout = [[sg.Text("Projects")],
+    [sg.Button("open", key="-OP-"), sg.Button("new", key="-NEW-"), sg.Button("manage")]
 ]
 
-window = pg.Window("Projects - BatApp Creator", layout)
+window = sg.Window("Projects - BatApp Creator", layout)
+
+while True:
+    event, values = window.read()
+
+    if event == sg.WIN_CLOSED:
+        break
+
+    if event == "-OP-":
+        os.system("explorer.exe")
+        sg.popup("Not full implemented yet")
+
+    if event == "-NEW-":
+        sg.popup("Not implemented yet")
+
+    if event == "manage":
+        sg.popup("Not implemented yet")
+window.close()
