@@ -1,6 +1,5 @@
 import PySimpleGUI as sg
-import os
-import components.appDetector
+from components import appDetector, vsStart
 
 layout = [[sg.Text("Projects")],
     [sg.Button("open", key="-OP-"), sg.Button("new", key="-NEW-"), sg.Button("manage")]
@@ -17,6 +16,7 @@ while True:
     if event == "-OP-":
         os.system("explorer.exe")
         sg.popup("Not full implemented yet")
+        vsStart.start(".")
 
     if event == "-NEW-":
         sg.popup("Not implemented yet")
